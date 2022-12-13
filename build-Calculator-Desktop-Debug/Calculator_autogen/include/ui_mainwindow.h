@@ -291,7 +291,7 @@ public:
         pushButton_9->setText(QCoreApplication::translate("MainWindow", "9", nullptr));
         pushButton_8->setText(QCoreApplication::translate("MainWindow", "8", nullptr));
         pushButton_7->setText(QCoreApplication::translate("MainWindow", "7", nullptr));
-        pushButton_multiply->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
+        pushButton_multiply->setText(QCoreApplication::translate("MainWindow", "x", nullptr));
         pushButton_6->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "4", nullptr));

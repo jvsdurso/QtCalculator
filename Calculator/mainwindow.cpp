@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+double firstNum;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,6 +21,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_9,SIGNAL(released()), this, SLOT(digit_pressed()));
     connect(ui->pushButton_plusminus,SIGNAL(released()), this, SLOT(unary_operation_pressed()));
     connect(ui->pushButton_percent,SIGNAL(released()), this, SLOT(unary_operation_pressed()));
+    connect(ui->pushButton_minus,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_plus,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_multiply,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_divide,SIGNAL(released()), this, SLOT(binary_operation_pressed()));
+
+    ui->pushButton_plus->setCheckable(true);
+    ui->pushButton_minus->setCheckable(true);
+    ui->pushButton_multiply->setCheckable(true);
+    ui->pushButton_divide->setCheckable(true);
 }
 
 MainWindow::~MainWindow()
@@ -34,7 +44,12 @@ void MainWindow::digit_pressed()
     double labelNumber;
     QString newLabel;
 
-    labelNumber = (ui->label->text() + button->text()).toDouble();
+    if(ui->pushButton_plus->isChecked() || ui->pushButton_minus->isChecked() || ui->pushButton_multiply->isChecked() || ui->pushButton_divide->isChecked()){
+        labelNumber = (button->text()).toDouble();
+    }
+    else {
+        labelNumber = (ui->label->text() + button->text()).toDouble();
+    }
 
     newLabel = QString::number(labelNumber,'g',15);
     ui->label->setText(newLabel);
@@ -83,10 +98,44 @@ void MainWindow::on_pushButton_clear_released()
 
 void MainWindow::on_pushButton_equals_released()
 {
-    QPushButton * button = (QPushButton *)sender();
+    double labelNumber, secondNum;
+    QString newLabel;
+
+    secondNum = ui->label->text().toDouble();
+
+    if (ui->pushButton_plus->isChecked())
+    {
+        labelNumber = firstNum + secondNum;
+        newLabel = QString::number(labelNumber,'g',15);
+        ui->label->setText(newLabel);
+        ui->pushButton_plus->setChecked(false);
+    }
+    else if (ui->pushButton_minus->isChecked())
+    {
+        labelNumber = firstNum - secondNum;
+        newLabel = QString::number(labelNumber,'g',15);
+        ui->label->setText(newLabel);
+        ui->pushButton_minus->setChecked(false);
+    }
+    else if (ui->pushButton_multiply->isChecked())
+    {
+        labelNumber = firstNum * secondNum;
+        newLabel = QString::number(labelNumber,'g',15);
+        ui->label->setText(newLabel);
+        ui->pushButton_multiply->setChecked(false);
+    }
+    else if (ui->pushButton_divide->isChecked())
+    {
+        labelNumber = firstNum / secondNum;
+        newLabel = QString::number(labelNumber,'g',15);
+        ui->label->setText(newLabel);
+        ui->pushButton_divide->setChecked(false);
+    }
 }
 
 void MainWindow::binary_operation_pressed()
 {
+    QPushButton * button = (QPushButton *)sender();
 
+    firstNum = ui->label->text().toDouble();
 }
