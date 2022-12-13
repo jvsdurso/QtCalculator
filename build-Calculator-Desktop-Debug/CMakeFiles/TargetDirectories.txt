@@ -1,0 +1,9 @@
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/Calculator.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/install.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/install/local.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/install/strip.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/Calculator_autogen_timestamp_deps.dir
+/home/dursin/Documentos/Workspace/qtcalculator/build-Calculator-Desktop-Debug/CMakeFiles/Calculator_autogen.dir
