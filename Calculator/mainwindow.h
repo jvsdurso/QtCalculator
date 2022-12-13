@@ -17,5 +17,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void digit_pressed();
 };
+
+
 #endif // MAINWINDOW_H
